@@ -1,7 +1,25 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+	head
+		title= 'Jillian Zhong'
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet')
+	body
+		div
+			div.logo
+				a(href='/')
+					img(src='../images/3.gif', height='70px')
+			div.navi
+				a(href='/contact') Contact
+				br
+				a(href='https://github.com/jirrian', target='_blank') Github
+				br
+				a(href='/apps') Apps
+				br
+				a(href='/games') Games
+				br
+				a(href='/miscmedia') Misc. Media
+				br
+				a(href='/photography') Photography
+			div.content
+				block content
