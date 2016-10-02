@@ -12,11 +12,7 @@ router.get('/contact', function(req, res, next) {
 });
 
 router.get('/apps', function(req, res, next) {
-  res.render('apps', { title: 'Mobile Apps' });
-});
-
-router.get('/games', function(req, res, next) {
-  res.render('games', { title: 'Games' });
+  res.render('apps', { title: 'Software Art' });
 });
 
 router.get('/miscmedia', function(req, res, next) {
@@ -24,7 +20,7 @@ router.get('/miscmedia', function(req, res, next) {
 });
 
 router.get('/photography', function(req, res, next) {
-  res.render('index', { title: 'Photography' });
+  res.render('photos', { title: 'Photography' });
 });
 
 module.exports = router;
