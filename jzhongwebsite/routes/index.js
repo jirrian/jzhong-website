@@ -3,12 +3,12 @@ var router = express.Router();
 
 //home page
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'About', stuff:'Jillian Zhong is a programmer, artist, and content creator based in New York and Philly.' });
+  res.render('about', { title: 'About'});
 });
 
 //contact page
 router.get('/contact', function(req, res, next) {
-  res.render('index', { title: 'Contact', stuff:'jillianzhong@nyu.edu' });
+  res.render('contact', { title: 'Contact'});
 });
 
 router.get('/apps', function(req, res, next) {
