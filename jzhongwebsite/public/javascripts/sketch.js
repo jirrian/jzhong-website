@@ -4,10 +4,28 @@ var c1, c2;
 function setup() {
 	sketchCanvas = createCanvas(window.innerWidth, window.innerHeight);
     sketchCanvas.parent('sketch');
-    // gradient
-	c1 = color(147, 177, 226);
-  	c2 = color(255, 209, 231);
 
+    // pick colors
+    var currentDate = new Date();
+    var hour = currentDate.getHours();
+
+    if(hour > 4 && hour < 10){
+    	c1 = color(147, 177, 226);
+  		c2 = color(255, 209, 231);
+    }
+    else if(hour > 10 && hour < 16){
+    	c1 = color(153, 255, 0);
+  		c2 = color(232, 0, 81);
+    }
+  	else if(hour > 16 && hour < 22){
+		c1 = color(255, 80, 0);
+  		c2 = color(177, 0, 226);
+  	}
+  	else{
+  		c1 = color(0, 246, 255);
+  		c2 = color(79, 0, 10);
+  	}
+	
 	drawGradient();
 }
 
@@ -22,6 +40,7 @@ function draw() {
 	
 }
 
+// draws gradient circles
 function drawGradient(){
 	for (var i = 0; i <= width; i+=8) {
       var inter = map(i, 0, width, 0, 1);
