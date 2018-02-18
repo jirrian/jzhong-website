@@ -1,5 +1,6 @@
 var sketchCanvas;
 var c1, c2;
+var i, j, k;
 
 function setup() {
 	sketchCanvas = createCanvas(window.innerWidth, window.innerHeight);
@@ -26,7 +27,10 @@ function setup() {
   		c2 = color(79, 0, 10);
   	}
 	
-	drawGradient();
+  i = 0;
+  j = 0;
+  k = 0;
+	//drawGradient();
 }
 
 function draw() {
@@ -34,11 +38,39 @@ function draw() {
 	window.onresize = function(event) {
     	sketchCanvas.size(window.innerWidth, window.innerHeight);
 
-		drawGradient();
+		drawGradientGrid();
 	};
 
+  for(i = 0; i <= width; i += 8) {
+      var inter = map(i, 0, width, 0, 1);
+      var c = lerpColor(c1, c2, inter);
+      stroke(c);
+      fill(c);
+      
+        if(j <= height){
+          ellipse(i,j,2);
+          j += 8;
+        }
+        else{
+          j = 0;
+        }
+    }
 	
 }
+
+// draws gradient circles in a grid
+function drawGradientGrid(){
+  for (var i = 0; i <= width; i+=8) {
+    var inter = map(i, 0, width, 0, 1);
+    var c = lerpColor(c1, c2, inter);
+    stroke(c);
+    fill(c);
+    for(var j = 0; j <= height; j+=8){
+     ellipse(i,j,2);
+    }
+  }
+}
+
 
 // draws gradient circles
 function drawGradient(){
@@ -58,5 +90,5 @@ function drawGradient(){
       	}
       }
       
-    }
+  }
 }

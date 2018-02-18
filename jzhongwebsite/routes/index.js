@@ -19,9 +19,4 @@ router.get('/miscmedia', function(req, res, next) {
   res.render('miscmedia', { title: 'Miscellaneous Digital Media' });
 });
 
-router.get('/photography', function(req, res, next) {
-	res.render('photos', { title: 'Photography'});
-});
-
-
 module.exports = router;
