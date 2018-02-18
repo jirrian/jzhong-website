@@ -3,7 +3,7 @@ var router = express.Router();
 
 //home page
 router.get('/', function(req, res, next) {
-  res.render('about', { title: 'About'});
+  res.render('portfolio');
 });
 
 //contact page
@@ -11,8 +11,8 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Contact'});
 });
 
-router.get('/apps', function(req, res, next) {
-  res.render('apps', { title: 'Software Art' });
+router.get('/press', function(req, res, next) {
+  res.render('press', { title: 'Press' });
 });
 
 router.get('/miscmedia', function(req, res, next) {
@@ -20,7 +20,8 @@ router.get('/miscmedia', function(req, res, next) {
 });
 
 router.get('/photography', function(req, res, next) {
-  res.render('photos', { title: 'Photography' });
+	res.render('photos', { title: 'Photography'});
 });
+
 
 module.exports = router;
