@@ -3,7 +3,7 @@ var router = express.Router();
 
 //home page
 router.get('/', function(req, res, next) {
-  res.render('portfolio');
+  res.render('portfolio', { title: 'Portfolio'});
 });
 
 //contact page
